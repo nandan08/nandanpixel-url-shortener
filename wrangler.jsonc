@@ -1,0 +1,25 @@
+{
+  "$schema": "https://developers.cloudflare.com/workers/wrangler/config-schema.json",
+  "name": "nandanpixel-shorturl",
+  "main": "./shorturl-worker.mjs",
+  "compatibility_date": "2026-11-11",
+  "assets": {
+    "directory": "./shorturl-site",
+    "binding": "ASSETS",
+    "run_worker_first": ["/*"]
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "LINKS",
+        "class_name": "LinkStore"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["LinkStore"]
+    }
+  ]
+}

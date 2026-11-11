@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developers.cloudflare.com/workers/wrangler/config-schema.json",
+  "name": "nandanpixel-shorturl-proxy",
+  "main": "./shorturl-proxy.mjs",
+  "compatibility_date": "2026-11-11",
+  "routes": [
+    {
+      "pattern": "shorturl.nandanpixel.com",
+      "custom_domain": true
+    }
+  ]
+}
